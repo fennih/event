@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>eVent Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <meta name="description" content="Search for your event">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript, event, e-vent">
+  <link rel="manifest" href="https://e-vent.tech/manifest.json">
+</head>
+<body>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="https://e-vent.tech/Home" class="active">Home</a>
+  <a href="https://e-vent.tech/ListaEventi.html">Esplora eventi</a>
+  <a href="https://e-vent.tech/autisti">Sezione Autisti</a>
+  <a href="https://e-vent.tech/PR">Sezione PR</a>
+  <a href="https://e-vent.tech/logout">Logout</a>
+  </a>
+  </div>
+  <div id = "row">
+    <div id="column"></div>
+  </div> 
+
+
+    <div>
+      <form action = '/aggiungiViaggio' method='post'>
+        <div id = "veicoli"> </div>
+        <label for="marca">Andata e ritorno</label>
+        <p><input type= "checkbox" name="andata_ritorno" value="andata" id = "andata"> Andata </p>
+        <p><input type= "checkbox" name="andata_ritorno" value="ritorno" id = "ritorno"> Ritorno </p>
+        <input class = "cerca" type="submit" value = "Conferma">
+      </form>
+    </div>
+  	<script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://e-vent.tech/swinstaller"></script>
+  	<script>
+      $(document).ready(function(){
+          $.ajax({  
+              type: "POST",
+              url: "https://e-vent.tech/mieiVeicoli",  
+              dataType: "html",
+              success: function(risposta) {  
+                  $("div#veicoli").html(risposta); 
+              },
+              error: function(){
+                alert("Chiamata fallita!");
+              } 
+          });
+      });
+    </script> 
+  </body>
+</html>

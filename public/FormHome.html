@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	<title>eVent - Home</title>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#317EFB"/>
+
+    <!--===============================================================================================-->	
+    	<link rel="icon" type="image/png" href="/favicon.ico"/>
+    <!--===============================================================================================-->
+      <link rel="stylesheet" href="/css/material.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--===============================================================================================-->
+      <meta name="description" content="Search for your event">
+      <meta name="keywords" content="HTML,CSS,XML,JavaScript, event, e-vent">
+      <link rel="manifest" href="https://e-vent.tech/manifest.json">
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">eVent</span>
+    </div>
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Home</a>
+      <a href="#scroll-tab-2" id="esploraEventi" class="mdl-layout__tab">Esplora Eventi</a>
+      <a href="#scroll-tab-3" id="autista" class="mdl-layout__tab">Sezione Autisti</a>
+      <a href="#scroll-tab-4" id="PR" class="mdl-layout__tab">Sezione PR</a>
+      <a href="https://e-vent.tech/logout" class="mdl-layout__tab">Logout</i></a>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+      <div class="page-content">
+    <div class="mdl-grid">
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <div id = "eventiHome"></div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col"></div>
+    <div class="mdl-cell mdl-cell--4-col"></div>
+
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+      <div class="page-content">
+        
+      <div id="listaEventi"></div>
+
+      </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+      <div class="page-content">
+        
+        <div id="sezioneAutista"> </div>
+      </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-4">
+      <div class="page-content">
+        
+        <div id="sezionePR"> </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="/js/material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='https://e-vent.tech/swinstaller'></script>
+<script src="https://e-vent.tech/homeScripts.js"></script>
+</body>
+</html>

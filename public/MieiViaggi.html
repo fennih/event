@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--3-col">
+
+        MIEI VIAGGI <br>
+      	<div id="viaggi" style="overflow-x:auto;"></div> <br>
+      </div>
+      <div class="mdl-cell mdl-cell--3-col">
+        MIEI VEICOLI  <br>
+        <div id="veicoli" style="overflow-x:auto;"></div> <br>
+      </div>
+      <div class="mdl-cell mdl-cell--3-col">
+        AGGIUNTA VEICOLO  <br>
+        <div id = "filtri">
+          <label for="marca">Marca</label>
+          <p><input type= "text" placeholder = "marca" id = "marca" required ></p>
+          <label for="modello">Modello</label>
+          <p><input type= "text" placeholder = "modello" id = "modello" required ></p>
+          <label for="n_posti">Numero posti disponibili</label>
+          <p><input type= "number" placeholder = "n° posti" id = "n_posti"  ></p>
+          <p><input class = "cerca" type="submit" id="but" value="Conferma" > </p>
+        </div>
+        <br>
+      </div>
+      <div class="mdl-cell mdl-cell--3-col">
+        RICHIESTE VIAGGI<br>
+        <div id="richieste"></div>
+      </div>
+    </div>
+    <script src="https://e-vent.tech/swinstaller"></script>
+  	<script src="/autistiScripts.js"></script> 
+  </body>
+</html>

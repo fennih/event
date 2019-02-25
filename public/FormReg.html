@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>eVent - Create your account</title>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#317EFB"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <meta name="description" content="Search for your event">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript, event, e-vent">
+  <link rel="manifest" href="https://e-vent.tech/manifest.json">
+</head>
+<body>
+
+
+    <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-form-title" style="background-image: url(images/bg-01.png);">
+        </div>
+
+        <div class="login100-form validate-form">
+            <form action="/FormLogin.html" method = "get">
+                  <input class="butt" type="submit" value="  Log in  ">
+                </form>
+                 <form action="/FormRegOrg.html" method = "get">
+           <input type="submit" class="butt" value="  Registrati come Organizzatore  ">
+          </form>
+
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+            <label for="email">Email</label>
+            <p><input type= "email" placeholder = "esempio@dominio.com" name = "email" id = "email" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
+            <label for="username">Username</label>
+         <p><input type= "text" placeholder = "username" name = "username" id = "username" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+            <label for="password">Password</label>
+         <p><input type="password" placeholder = "password"  name = "password" id = "password" required  ></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Nome is required">
+           <label for="nome">Nome</label>
+         <p><input type= "text" placeholder = "nome" name =  "nome" id = "nome" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Cognome is required">
+            <label for="cognome">Cognome</label>
+         <p><input type= "text"placeholder = "cognome" name = "cognome" id = "cognome" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Tel number is required">
+            <label for="tel">Tel</label>
+         <p><input type= "tel" placeholder = "1234567890" name = "tel" pattern="[0-9]{10}" id = "tel" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Sex is required">
+            <p>
+          <label for="male"> Maschio </label> 
+          <input type="radio" name="sesso" value="m" id = "male" class = "sesso"> 
+          <label for="female"> Femmina </label>
+          <input type="radio" name="sesso" value="f" id = "female" class = "sesso"> 
+          <label for="other"> Non specificato </label>
+          <input type="radio" name="sesso" checked="checked" value="o" id = "other" class = "sesso">  
+        </p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Date is required">
+            <label for="date">Date</label>
+         <p><input type= "date" name = "data_nascita" id = "date" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "City of interest is required">
+            <label for="citta_interesse">Città di interesse</label>
+             <p><input type= "text" placeholder = "citta di interesse" name = "citta_interesse" id = "citta_interesse"></p>
+          </div>
+
+
+             <div class="flex-sb-m w-full p-b-30">
+
+          </div>
+          <div class="container-login100-form-btn">
+            <button id="submit" class="login100-form-btn">
+              Conferma
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="regScripts.js"></script>
+    <script src="https://e-vent.tech/swinstaller"></script>
+  </body>
+</html>

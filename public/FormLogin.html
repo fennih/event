@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>eVent Login</title>
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#317EFB"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <meta name="description" content="Search for your event">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript, event, e-vent">
+  <link rel="manifest" href="https://e-vent.tech/manifest.json">
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(images/bg-01.png);">
+				</div>
+
+				<div class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="email" placeholder="Enter email" id="email">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Enter password" id="password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="contact100-form-checkbox">
+						</div>
+
+						<div>
+							<a href="https://e-vent.tech/FormReg.html" class="txt1">
+								Crea il tuo account
+							</a>
+						</div>
+
+						<div>
+							<a href="https://e-vent.tech/ForgottenPass.html" class="txt1">
+								Hai dimenticato la tua password?
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button id="submit" class="login100-form-btn">
+							Login
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script src='https://e-vent.tech/swinstaller'></script>
+	<!--===============================================================================================-->
+	<script>
+
+    $(document).ready(function(){ 
+
+      var config = {
+        apiKey: "AIzaSyD1W6e5OMDRB8z1Sr2YSdRYaA992meSYGA",
+        authDomain: "unicam-event.firebaseapp.com",
+        databaseURL: "https://unicam-event.firebaseio.com",
+        storageBucket: "unicam-event.appspot.com",
+      };
+
+      firebase.initializeApp(config);
+
+      $("#submit").click(function(){
+      
+        var email=$("#email").val();
+        var password=$("#password").val();  
+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+          $.post("https://e-vent.tech/login",{
+            email : email
+          }).done(function(data){
+            var url = "https://e-vent.tech/Home";
+            $(location).attr("href", url);
+          });
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if(error){
+            alert(errorMessage);
+          } 
+        });
+      });
+    });
+</script>
+
+</body>
+</html>

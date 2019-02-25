@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+      <div id = "filtri"></div>
+       <label for="nome">Nome</label>
+      <p><input type= "text" placeholder = "nome evento" id = "nome"  ></p>
+      <label for="citta">Città</label>
+      <p><input type= "text" placeholder = "citta" id = "citta" ></p>
+      <label for="provincia">Provincia</label>
+      <p><input type= "text" placeholder = "provincia"  id = "provincia"  ></p>
+      <label for="regione">Regione</label>
+      <p><input type= "text" placeholder = "regione" id =  "regione" ></p>
+      <label for="info">Info</label>
+      <p><input type= "text" placeholder = "informazioni evento" id =  "info" ></p>
+      <label for="prezzo">Prezzo massimo</label>
+      <p><input type= "number" id="prezzo" min="0"></p>
+      <label for="data">Data</label>
+      <p><input type= "date" id = "data" ></p>
+      <label for="numpartecipanti">Partecipanti minimi</label>
+      <p><input type= "number" placeholder = "num partecipanti min" id = "numpartecipanti" ></p>
+      <label for="organizzatore">Organizzatore</label>
+      <p><input type= "text" placeholder = "organizzatore" id = "organizzatore" ></p>
+      <p><input type="submit" class="cerca" id="but" value="Cerca" > </p>
+    </div>
+    
+    <div class="mdl-cell mdl-cell--4-col">
+      <div id="eventi"></div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+      <div id="evento"></div> 
+      <div id="viaggio" style = "display: none;">   
+        <div id = "veicoli"> </div>
+        <p><input type= "checkbox" name="andata_ritorno" id = "andata"> Andata </p>
+        <p><input type= "checkbox" name="andata_ritorno" id = "ritorno"> Ritorno </p>
+        <button class="conferma_viaggio"> Conferma </button>
+      </div>
+      <div id ="richiesta_viaggi"> </div>
+      <div id ="sponsorizzazioni"> </div>
+        
+    </div>
+  </div>
+    <script src="https://e-vent.tech/swinstaller"></script>
+  	<script src="/listaEventiScripts.js"></script> 
+  </body>
+</html>

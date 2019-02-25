@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>eVent - Create your Orgs account</title>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#317EFB"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <meta name="description" content="Search for your event">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript, event, e-vent">
+  <link rel="manifest" href="https://e-vent.tech/manifest.json">
+</head>
+<body>
+
+    <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-form-title" style="background-image: url(images/bg-01.png);">
+        </div>
+
+        <div class="login100-form validate-form">
+          <form action="/FormLogin.html" method = "get">
+                  <input class="butt" type="submit" value="  Log in  ">
+                </form>
+
+          <div class="butt">
+              <form action="/FormReg.html" method = "get">
+            <input class= "butt" type="submit" value="   Registrati come utente   ">
+          </form>
+            </div>
+
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+            <label for="email">Email</label>
+            <p><input type= "email" placeholder = "esempio@dominio.com" name = "email" id = "email" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Username is required">
+            <label for="username">Username</label>
+         <p><input type= "text" placeholder = "username" name = "username" id = "username" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+            <label for="password">Password</label>
+         <p><input type="password" placeholder = "password"  name = "password" id = "password" required  ></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Nome is required">
+           <label for="nome">Nome</label>
+         <p><input type= "text" placeholder = "nome" name =  "nome" id = "nome" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Cognome is required">
+            <label for="tipo">Tipo</label>
+         <p><input type= "text"placeholder = "tipo" name = "tipo" id = "tipo" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Tel number is required">
+            <label for="tel">Tel</label>
+         <p><input type= "tel" placeholder = "1234567890" name = "tel" pattern="[0-9]{10}" id = "tel" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Sex is required">
+            <label for="partiva">Partiva Iva</label>
+         <p><input type= "partiva" placeholder = "partita iva" name = "partiva" id = "partiva" pattern="[0-9]{10}" required></p>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Date is required">
+            <label for="citta">Città</label>
+         <p><input type= "text" placeholder = "citta" name = "citta" id = "citta" required></p>
+          </div>
+
+        
+          <div class="flex-sb-m w-full p-b-30">
+
+          </div>
+
+          <div class="container-login100-form-btn">
+            <button class = "login100-form-btn" id = "submit"> Conferma </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="https://e-vent.tech/swinstaller"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script type="text/javascript">
+      
+      $(document).ready(function(){ 
+
+          var config = {
+            apiKey: "AIzaSyD1W6e5OMDRB8z1Sr2YSdRYaA992meSYGA",
+            authDomain: "unicam-event.firebaseapp.com",
+            databaseURL: "https://unicam-event.firebaseio.com",
+            storageBucket: "unicam-event.appspot.com",
+          };
+
+          firebase.initializeApp(config);
+
+          $("#submit").click(function(){
+
+            var email=$("#email").val();
+            var password=$("#password").val();    
+            var nome=$("#nome").val();
+            var tipo=$("#tipo").val();
+            var citta=$("#citta").val();
+            var partiva=$("#partiva").val();
+            var username=$("#username").val();   
+
+            firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) { 
+                  $.post("https://e-vent.tech/signInOrg",{
+                    email : email, nome : nome, citta : citta, tipo : tipo, username : username, password : password, partiva : partiva
+                  }).done(function(data){
+                    var url = "https://e-vent.tech/FormLogin.html";
+                    $(location).attr("href", url);
+                  }); 
+            }).catch(function(error) {
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              if(error){
+                alert(errorMessage);
+              } 
+            });
+          });
+        });
+    </script>
+  </body>
+</html>
